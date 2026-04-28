@@ -34,6 +34,7 @@ public class UserServiceImpl implements UserService {
         user.setPassword(passwordEncoder.encode(dto.getPassword()));
         user.setPhone(dto.getPhone());
         user.setUserRole(dto.getRole());
+        user.setActive(dto.isActive());
 
         User savedUser = userRepository.save(user);
 
@@ -132,6 +133,7 @@ public class UserServiceImpl implements UserService {
                 .email(user.getEmail())
                 .role(user.getUserRole().name())
                 .active(user.isActive())
+                .phone(user.getPhone())
                 .createdAt(user.getCreatedAt())
                 .updatedAt(user.getUpdatedAt())
                 .build();

@@ -17,6 +17,8 @@
     <modules>
         <module>eureka-server</module>
         <module>user-service</module>
+        <module>doctor-service</module>
+        <module>appointment-service</module>
     </modules>
 
     <properties>
